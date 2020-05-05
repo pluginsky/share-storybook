@@ -9,11 +9,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
-    "//deploy": "npm run build-storybook && gh-pages -d build-sb",
-    "//preversion": "npm run clean && npm run build && npm run deploy",
-    "//postversion": "git push && git push --tags && npm publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "rm -rf build-sb && build-storybook -o build-sb",
     "prettier": "prettier --write 'src/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'"
   },
   "repository": {
