@@ -7,7 +7,7 @@ import { SharePanel } from './SharePanel';
 import { ADDON_ID, PANEL_ID, PARAM_KEY } from './shared';
 
 addons.register(ADDON_ID, () => {
-  const render = ({ active, key }) => (
+  const render = ({ active, key }: any) => (
     <AddonPanel active={active} key={key}>
       <SharePanel />
     </AddonPanel>
@@ -19,6 +19,6 @@ addons.register(ADDON_ID, () => {
     type: types.PANEL,
     title,
     render,
-    paramKey: PARAM_KEY,
+    paramKey: PARAM_KEY
   });
 });
