@@ -1,7 +1,7 @@
 {
   "name": "share-storybook",
   "version": "1.0.0",
-  "description": "Place storybook playground as embed on website",
+  "description": "Place Storybook playground as embed on website",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "dist/register.js",
