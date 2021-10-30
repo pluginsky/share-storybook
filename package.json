@@ -1,16 +1,20 @@
 {
   "name": "share-storybook",
   "version": "1.0.0",
-  "description": "Place Storybook playground as embed on website",
+  "description": "Place the Storybook playground as embed on the website",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "dist/register.js",
   "types": "dist/register.d.ts",
   "scripts": {
+    "prebuild": "rimraf dist/*",
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
     "storybook": "start-storybook -p 6006",
-    "prettier": "prettier --write 'src/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
+    "prettier": "prettier --write 'src/**/*.{html,scss,css,tsx,ts}'",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
@@ -19,37 +23,43 @@
     "url": "https://github.com/pluginsky/share-storybook.git"
   },
   "keywords": [
+    "stories",
+    "playground",
+    "website",
+    "demo",
     "share",
     "addon",
     "embed",
     "storybook",
+    "preview",
+    "frame",
     "place"
   ],
   "files": [
     "dist/**/*",
     "register.js"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/pluginsky/share-storybook#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@storybook/addon-links": "^6.3.6",
-    "@storybook/addons": "^6.3.6",
-    "@storybook/api": "^6.3.6",
-    "@storybook/components": "^6.3.6",
-    "@storybook/react": "^6.3.6",
-    "@types/node": "^16.4.12",
-    "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9",
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/api": "^6.3.12",
+    "@storybook/components": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@storybook/storybook-deployer": "^2.8.10",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
     "@types/react-json-tree": "^0.6.11",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.2.3",
     "gh-pages": "^3.2.3",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.1",
-    "prettier": "^2.3.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "typescript": "^3.8.3"
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -57,8 +67,8 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "npm run prettier",
-      "npm run lint"
+      "npm run lint",
+      "npm run prettier"
     ]
   }
 }
