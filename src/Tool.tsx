@@ -17,7 +17,6 @@ export const Tool = () => {
         <Icons icon="share" />
       </IconButton>
 
-      {/* TODO move to separate component */}
       <ConfigForm isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
   );

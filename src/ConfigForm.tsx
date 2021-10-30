@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react';
 import { Form } from '@storybook/components';
 
-
 interface Props {
   readonly isOpen: boolean;
+  onClose: () => void;
 }
 
-export const ConfigForm = ({isOpen}: Props) => {
+export const ConfigForm = ({ isOpen, onClose }: Props) => {
   const [title, setTitle] = useState('Storybook Preview');
   const [width, setWidth] = useState(500);
   const [height, setHeight] = useState(300);
@@ -74,5 +74,5 @@ export const ConfigForm = ({isOpen}: Props) => {
         </div>
       </TabsState>
     </Modal>
-  )
-}
+  );
+};
