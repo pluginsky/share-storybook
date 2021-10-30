@@ -16,10 +16,6 @@ jobs:
     - stage: release
       node_js: lts/*
       deploy:
-        - provider: script
-          skip_cleanup: true
-          script: npm run semantic-release
-
         - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
