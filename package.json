@@ -51,7 +51,6 @@
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
-    "@types/react-json-tree": "^0.6.11",
     "babel-loader": "^8.2.3",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
