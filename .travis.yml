@@ -1,0 +1,28 @@
+language: node_js
+
+node_js: node
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - npm install
+  - npm run build
+  - npm run build-storybook
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        - provider: script
+          skip_cleanup: true
+          script: npm run semantic-release
+
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: storybook-static
+          on:
+            branch: main

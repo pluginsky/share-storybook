@@ -42,18 +42,18 @@ export const ConfigForm = ({ isOpen, onClose }: Props) => {
 
       {/* Radio group - link to: current story, main story/root dir */}
       <Radio
-        id="Mice"
+        // id="Mice"
         label="Preview current story"
-        value="mice"
-        onChange={onChange}
+        // value="mice"
+        // onChange={onChange}
         checked
         appearance="secondary"
       />
       <Radio
-        id="Mice"
+        // id="Mice"
         label="Preview main story"
-        value="mice"
-        onChange={onChange}
+        // value="mice"
+        // onChange={onChange}
         checked
         appearance="secondary"
       />
