@@ -32,47 +32,48 @@ export const ConfigForm = ({ isOpen, onClose }: Props) => {
 
   // TODO display confirmation/message after copy
 
-  return (
-    <Modal isOpen={isOpen}>
-      <Form.Input placeholder="Title" onChange={() => setTitle()} />
-      <Form.Input placeholder="Width" onChange={() => setWidth()} />
-      <Form.Input placeholder="Height" onChange={() => setHeight()} />
+  return null;
+  // return (
+  //   <Modal isOpen={isOpen}>
+  //     <Form.Input placeholder="Title" onChange={() => setTitle()} />
+  //     <Form.Input placeholder="Width" onChange={() => setWidth()} />
+  //     <Form.Input placeholder="Height" onChange={() => setHeight()} />
 
-      <Checkbox label="Share with Storybook UI" />
+  //     <Checkbox label="Share with Storybook UI" />
 
-      {/* Radio group - link to: current story, main story/root dir */}
-      <Radio
-        // id="Mice"
-        label="Preview current story"
-        // value="mice"
-        // onChange={onChange}
-        checked
-        appearance="secondary"
-      />
-      <Radio
-        // id="Mice"
-        label="Preview main story"
-        // value="mice"
-        // onChange={onChange}
-        checked
-        appearance="secondary"
-      />
+  //     {/* Radio group - link to: current story, main story/root dir */}
+  //     <Radio
+  //       // id="Mice"
+  //       label="Preview current story"
+  //       // value="mice"
+  //       // onChange={onChange}
+  //       checked
+  //       appearance="secondary"
+  //     />
+  //     <Radio
+  //       // id="Mice"
+  //       label="Preview main story"
+  //       // value="mice"
+  //       // onChange={onChange}
+  //       checked
+  //       appearance="secondary"
+  //     />
 
-      {/* Warning if localhost: Storybook is running in the development mode and is only available on your local machine. It's not possible to place the frame on the website. */}
+  //     {/* Warning if localhost: Storybook is running in the development mode and is only available on your local machine. It's not possible to place the frame on the website. */}
 
-      {/* Tabs - code/preview */}
-      <TabsState
-      // initial="preview"
-      >
-        <div id="preview" title="Preview">
-          <div dangerouslySetInnerHTML={{ __html: template }} />
-        </div>
+  //     {/* Tabs - code/preview */}
+  //     <TabsState
+  //     // initial="preview"
+  //     >
+  //       <div id="preview" title="Preview">
+  //         <div dangerouslySetInnerHTML={{ __html: template }} />
+  //       </div>
 
-        <div id="code" title="Code">
-          {/* Description blablabla */}
-          <CodeSnippets />
-        </div>
-      </TabsState>
-    </Modal>
-  );
+  //       <div id="code" title="Code">
+  //         {/* Description blablabla */}
+  //         <CodeSnippets />
+  //       </div>
+  //     </TabsState>
+  //   </Modal>
+  // );
 };
